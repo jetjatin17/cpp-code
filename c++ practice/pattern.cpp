@@ -321,5 +321,7 @@ int main(){
     cin >> n;
     for (i=0;i<=n;i++){
         cout << i << endl;
-    }return 0;
+    }
+    cout << "this is done" << endl;
+    return 0;
 }
