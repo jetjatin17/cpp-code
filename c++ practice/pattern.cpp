@@ -319,7 +319,7 @@ int main(){
     int i,n;
     cout << "enter the number : ";
     cin >> n;
-    for (i=0;i<n;i++){
+    for (i=0;i<=n;i++){
         cout << i << endl;
     }return 0;
 }
