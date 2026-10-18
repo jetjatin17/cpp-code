@@ -39,10 +39,11 @@ pair<int,int> calci(int a,int b){
 
 
 int main(){
-    // initialise_declaration();
-    // nested_pairs();
-    // array_pairs();
-    auto c = calci(10,2);
+    initialise_declaration();
+    nested_pairs();
+    array_pairs();
+    auto c = calci(10,2);     // don't have to give c data type as it is class in this case by auto.
+    // pair<int,int> c = calci(10,2)          -- for without auto usage.
     cout << c.first << "\t" << c.second << endl;
     return 0;
 }

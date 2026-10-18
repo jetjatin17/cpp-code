@@ -1,5 +1,4 @@
-#include<iostream>
-#include<string>
+#include<bits/stdc++.h>
 using namespace std;
 
 // int main()
@@ -199,3 +198,10 @@ using namespace std;
 //     cout << "factorial is = " << factorial << endl;
 //     return 0;
 // }
+
+int main(){
+    int n = 2,m=3;
+    int max = pow(n,m);
+    cout<<max;
+    return 0;
+}
