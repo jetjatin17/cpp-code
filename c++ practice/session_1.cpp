@@ -200,8 +200,23 @@ using namespace std;
 // }
 
 int main(){
-    int n = 2,m=3;
-    int max = pow(n,m);
-    cout<<max;
+    int n1,n2,max,min;
+    cout<<"enter the two numbers : ";
+    cin>>n1>>n2;
+    int gcd=1;
+    while(n1>0){
+        if (n1>n2){
+            max=n1;
+            min=n2;
+        }
+        else{
+            max=n2;
+            min=n1;
+        }
+        max=max-min;
+        n1=max;
+        n2=min;
+    }
+    cout<<min;
     return 0;
 }
