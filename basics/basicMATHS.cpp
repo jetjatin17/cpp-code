@@ -114,6 +114,54 @@ int GCD(int n1,int n2) {
     return high;
 }
 
+// int GCD(int n1,int n2) {
+//     while (n1>0 && n2>0){
+//         if (n1>n2)
+//             n1=n1%n2;
+//         else
+//             n2=n2%n1;
+//     }                             this is more optimised method.
+//     if (n1==0)
+//         return n2;
+//     else
+//         return n1;
+// }
+
+int LCM(int n1,int n2) {
+    if (n2>n1){
+        int temp = n1;
+        n1=n2;
+        n2=temp;
+    }
+    for (int i=n1;i<=n1*n2;i+=n1){
+        if (i%n1==0 && i%n2==0)
+            return i;
+    }
+}
+
+int countPrimes(int n) {
+    if (n<=2)
+        return 0;
+    vector <bool> isprime(n,true);
+    isprime[0] = false;
+    isprime[1] = false;
+    for (int i=2;i*i<n;i++){
+        if (isprime[i]){
+            for (int j=i*i;j<n;j+=i){
+                isprime[j] = false;
+            }
+        }
+    }
+
+    int count = 0;
+
+    for (int i=2;i<n;i++){
+        if (isprime[i])
+            count++;
+    }   
+    return count;
+}
+
 int main(){
     int n,m;
     cout<<"enter the digit :";
@@ -129,9 +177,11 @@ int main(){
     cout<<"armstrong number = "<<isArmstrong(n)<<endl;
     // cout<<"divisors = "<<divisors(n)<<endl;
     cout<<"prime = "<<isPrime(n)<<endl;
+    cout<<"prime upto "<<n<<" = "<<countPrimes(n)<<endl;
     cout<<"perfect number = "<<isPerfect(n)<<endl;
     cout<<endl<<"enter another number : ";
     cin>>m;
     cout<<"\ngcd/hcf = "<<GCD(n,m)<<endl;
+    cout<<"lcm = "<<LCM(n,m)<<endl;
     return 0; 
 }

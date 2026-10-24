@@ -200,23 +200,27 @@ using namespace std;
 // }
 
 int main(){
-    int n1,n2,max,min;
-    cout<<"enter the two numbers : ";
-    cin>>n1>>n2;
-    int gcd=1;
-    while(n1>0){
-        if (n1>n2){
-            max=n1;
-            min=n2;
+    int n;
+    cin>>n;
+    cout<<endl;
+    int sum = 0;
+    if (n==0 || n==1)
+        cout<<0<<endl;
+        exit;
+    for (int i=2;i<n;i++){
+        int prime = 0;
+        for (int j=1;j*j<=i;j++){
+            if (i%j==0){
+                prime+=1;
+                if (i/j != j)
+                    prime+=1;
+            }
         }
-        else{
-            max=n2;
-            min=n1;
+        if (prime == 2){
+            sum+=1;
+            cout<<i<<"\t";
         }
-        max=max-min;
-        n1=max;
-        n2=min;
     }
-    cout<<min;
+    cout<<"sum = "<<sum<<endl;
     return 0;
 }
