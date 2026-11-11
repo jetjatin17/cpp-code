@@ -199,28 +199,38 @@ using namespace std;
 //     return 0;
 // }
 
+// int main(){
+//     int n;
+//     cin>>n;
+//     cout<<endl;
+//     int sum = 0;
+//     if (n==0 || n==1)
+//         cout<<0<<endl;
+//         exit;
+//     for (int i=2;i<n;i++){
+//         int prime = 0;
+//         for (int j=1;j*j<=i;j++){
+//             if (i%j==0){
+//                 prime+=1;
+//                 if (i/j != j)
+//                     prime+=1;
+//             }
+//         }
+//         if (prime == 2){
+//             sum+=1;
+//             cout<<i<<"\t";
+//         }
+//     }
+//     cout<<"sum = "<<sum<<endl;
+//     return 0;
+// }
+
+
 int main(){
-    int n;
-    cin>>n;
-    cout<<endl;
-    int sum = 0;
-    if (n==0 || n==1)
-        cout<<0<<endl;
-        exit;
-    for (int i=2;i<n;i++){
-        int prime = 0;
-        for (int j=1;j*j<=i;j++){
-            if (i%j==0){
-                prime+=1;
-                if (i/j != j)
-                    prime+=1;
-            }
-        }
-        if (prime == 2){
-            sum+=1;
-            cout<<i<<"\t";
-        }
-    }
-    cout<<"sum = "<<sum<<endl;
+    int a=10;
+    float b = 20.2;
+    void *ptr;
+    ptr = &a;
+    cout<<"integer value = "<<*ptr<<endl;
     return 0;
 }
