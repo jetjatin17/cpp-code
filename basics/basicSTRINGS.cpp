@@ -65,6 +65,27 @@ void largest(string &s){
     }
 }
 
+bool isPalindrome(string s) {
+    if (s.empty() != 0)
+        return true;
+    for (int i=0;i<s.size();i++){
+        if (isalnum(s[i])){
+            if (isalpha(s[i]))
+                s[i] = tolower(s[i]);
+        }
+        else{
+            s.erase(i,1);
+            i--;
+        }
+    }
+    string a = s;
+    reverse(s.begin(),s.end());
+    if (a==s)
+        return true;
+    else
+        return false;
+}
+
 int main(){
     string s;
     read(s);
@@ -118,18 +139,6 @@ int main(){
     // cout<<s<<endl;
 
     // cout<<endl<<isalnum(s[0])<<endl;
-
-    for (int i=0;i<s.size();i++){
-        if (isalnum(s[i])){
-            if (isalpha(s[i]))
-                s[i] = tolower(s[i]);
-        }
-        else{
-            s.erase(i,1);
-            i--;
-        }
-    }
-    cout<<endl<<s<<endl;
     
     // tolower(s[0]);
     // cout<<endl<<s;
